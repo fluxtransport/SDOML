@@ -16,7 +16,7 @@ endif
 set pwd = $PWD
 set year  = $1
 set month = $2
-if ($year == 2010 && $month < 5)
+if ($year == 2010 && $month < 5) then
   echo "No SDO data available before May 2010"
   exit 2
 endif
@@ -29,7 +29,7 @@ set permabase = "https://stacks.stanford.edu/file/druid:"
 set links = (vk217bh4910 jc488jb7715 dc156hp0190 km388vz4371 sr325xz9271 qw012qy2533 vf806tr8954 kp222tm1554 nk828sc2920)
 set years = (2010 2011 2012 2013 2014 2015 2016 2017 2018)
 #Edit next line if you only want a subset of wavelengths
-set channels = (AIA_0094 AIA_0131 AIA_0171 AIA_0193 AIA_0211 AIA_0304 AIA_0335 AIA_1600 AIA_1700 HMI_Bx HMI_By HMI_Bz)
+set channels = (HMI_Bx HMI_By HMI_Bz AIA_0094 AIA_0131 AIA_0171 AIA_0193 AIA_0211 AIA_0304 AIA_0335 AIA_1600 AIA_1700)
 set months = (01 02 03 04 05 06 07 08 09 10 11 12)
 set files = ()
 mkdir $year
@@ -44,7 +44,7 @@ echo $files
 cd $pwd/$year
 
 if (`where parallel` != "") then
-  parallel wget ::: $files
+  parallel wget ::: $files &
 else
   foreach f ($files)
   wget $f
