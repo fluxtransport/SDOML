@@ -14,3 +14,5 @@ Publication: The Astrophysical Journal Supplement Series, Volume 242, Issue 1, a
 Publication Date:	05/2019
 
 Acknowledgements: AIA, EVE & HMI are instruments onboard the Solar Dynamics Observatory, a mission for NASA's Living With a Star program.
+
+contact: Mark Cheung (@fluxtransport)
